@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:700|Roboto');
-@import url(https://fonts.googleapis.com/css?family=Over+the+Rainbow);
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet');
+@import url(https://fonts.googleapis.com/css2?family=Anton&display=swap);
     .header{
         background-color: green;
         color: #FF532E;
-        font-family: 'Pacifico', serif;
+        font-family: 'Oswald', sans-serif;
         /* text-align: center; */
     }
 
@@ -45,7 +44,7 @@
   
   .flexProfessionalGoal {
     flex: 0 33.33%;
-    font-family: 'Merriweather', serif;
+    font-family: 'Oswald', sans-serif;
   }
   
   .flexWorkHistory {
@@ -53,12 +52,12 @@
   }
 
   .roles{
-    font-family: 'Merriweather', serif;
+    font-family: 'Anton', sans-serif;
   }
   .History{
     text-align: left;
     padding: 20px;
-    font-family: 'Pacifico', serif;
+    font-family: 'Anton', serif;
     font-size: 20px;
   }
   .content{
