@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet');
-@import url(https://fonts.googleapis.com/css2?family=Anton&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
     .header{
         background-color: #0066FF;
         color: #000000;
@@ -52,12 +52,12 @@
   }
 
   .roles{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Dancing Spirit', cursive;
   }
   .History{
     text-align: left;
     padding: 20px;
-    font-family: 'Anton', serif;
+    font-family: 'Dancing Spirit', cursive;
     font-size: 20px;
   }
   .content{
