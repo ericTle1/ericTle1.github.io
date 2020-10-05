@@ -2,8 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Over+the+Rainbow);
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
     .header{
-        background-color: darkgreen;
-        color: #F2E3A7;
+        background-color: green;
+        color: #FF532E;
         font-family: 'Pacifico', serif;
         /* text-align: center; */
     }
