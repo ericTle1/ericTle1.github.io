@@ -7,8 +7,8 @@ document.querySelector(".header").innerHTML = myFullName + "\'s Lab 4\n";
 //  Label each paragraph with a distinct class name
 var newParagraphOne = document.createElement("p1");
 var newParagraphTwo = document.createElement("p2");
-var newParagraphOneText = document.createTextNode("My name has  \n");
-var newParagraphTwoText = document.createTextNode("The second new paragraph.\n");
+var newParagraphOneText = document.createTextNode("First Paragraph: \n");
+var newParagraphTwoText = document.createTextNode("Second Paragraph:\n");
 
 newParagraphOne.appendChild(newParagraphOneText);
 newParagraphTwo.appendChild(newParagraphTwoText);
