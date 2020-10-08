@@ -10,12 +10,12 @@ const paragraph = document.querySelector(".content");
 
 const mp1 = document.createElement("p");
 mp1.className = "content1";
-mp1.innerText = "Hello wolrd!";
+mp1.innerText = "Hello Siri";
 paragraph.appendChild(mp1);
 
 const mp2 = document.createElement("p");
 mp2.className = "content2"
-mp2.innerText = "Hello back at you!";
+mp2.innerText = "Hello Alexa";
 paragraph.appendChild(mp2);
 
 // 3 Into the first paragraph, insert the phrase "my name has " length of your name " characters"
