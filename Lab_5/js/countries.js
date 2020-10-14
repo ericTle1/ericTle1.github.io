@@ -76,7 +76,7 @@ var countryNameCatalog = ["Afghanistan",	"Ã…land Islands",	"Albania",	"Algeri
 // injects an ordered list into the html
 var countryList = [];
 var countryListContain = document.createElement("div");
-var countryListElement   = document.createElement("ol");
+var countryListElement = document.createElement("ol");
 
 // other necessary variables for the getRandomCountries function
 var countryCatalogCount = countryList.length;
