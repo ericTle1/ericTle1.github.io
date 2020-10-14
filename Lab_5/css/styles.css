@@ -100,3 +100,11 @@ h3 {
   position: relative;
   top: 1px;
 }
+
+.country-name {
+  font-weight: normal;
+}
+
+.country-code {
+  font-weight: bold;
+}
