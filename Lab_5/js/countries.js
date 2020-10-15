@@ -1,7 +1,7 @@
 // (2) Using JS, inject an ordered list into the div with the class "content"
 
 // holds country codes
-var countryCodeCatalog = ["AF",	"AX",	"AL",	"DZ",	"AS",	
+var countryCodeList = ["AF",	"AX",	"AL",	"DZ",	"AS",	
 "AD",	"AO",	"AI",	"AQ",	"AG",	"AR",	"AM",	"AW",	
 "AU",	"AT",	"AZ",	"BS",	"BH",	"BD",	"BB",	"BY",	
 "BE",	"BZ",	"BJ",	"BM",	"BT",	"BO",	"BQ",	"BA",	
@@ -35,7 +35,7 @@ var countryCodeCatalog = ["AF",	"AX",	"AL",	"DZ",	"AS",
 "EH",	"YE",	"ZM",	"ZW"];
 
 // holds country names
-var countryNameCatalog = ["Afghanistan",	"Ã…land Islands",	"Albania",	"Algeria",	"American Samoa",	
+var countryNameList = ["Afghanistan",	"Ã…land Islands",	"Albania",	"Algeria",	"American Samoa",	
 "Andorra",	"Angola",	"Anguilla",	"Antarctica",	"Antigua and Barbuda",	"Argentina",	"Armenia",	
 "Aruba",	"Australia",	"Austria",	"Azerbaijan",	"Bahamas",	"Bahrain",	"Bangladesh",	"Barbados",	
 "Belarus",	"Belgium",	"Belize",	"Benin",	"Bermuda",	"Bhutan",	"Bolivia (Plurinational State of)",	
@@ -75,58 +75,79 @@ var countryNameCatalog = ["Afghanistan",	"Ã…land Islands",	"Albania",	"Algeri
 
 // injects an ordered list into the html
 var countryList = [];
-var countryListContain = document.createElement("div");
-var countryListElement = document.createElement("ol");
+var countryListContainer = document.createElement("div");
+var countryListElement   = document.createElement("ol");
 
 // other necessary variables for the getRandomCountries function
-var countryCatalogCount = countryList.length;
+var countryListCount     = countryList.length;
 var listItem;
-var randNumber;
+var randNum, usedNum = 9999999;
 var x, y1, y2, z1, z2;
 
+// variable used to store any countries display on button click
+var usedCountries = [];
 
-// 3. Give your ordered list the class "countries."
+
+// (3) Give your ordered list the class "countries."
 countryListElement.className = "countries";
 
 
-// 4. Design the following function to run on the click of a button from the index page.
+// (4) Design the following function to run on the click of a button from the index page.
 const countryButton = document.querySelector("button");
 
 
-// 5. Select 25 random countries from your list by writing a separate function that makes use of Math.random.
-// 6. Make sure the selection is unique.
-countryButton.onclick = function getRandomCountries()
+// (5) Select 25 random countries from your list by writing a separate function that makes use of Math.random.
+// (6) Make sure the selection is unique.
+
+// uses an event listener to listen for button clicks
+countryButton.addEventListener('click', getRandomCountries);
+function getRandomCountries()
 {
-    document.querySelector(".content").appendChild(countryListContain);
-    countryListContain.appendChild(countryListElement);
+    document.querySelector(".content").appendChild(countryListContainer);
+    countryListContainer.appendChild(countryListElement);
 
     for(x = 0; x < 25; x++)
     {
-        randNum = Math.floor(Math.random() * countryCodeCatalog.length);
+        // generates a random number
+        randNum = Math.floor(Math.random() * countryCodeList.length);
 
-        // create the String that holds a random country's name.
-        y1 = document.createElement("p1");
-        y2 = document.createTextNode(countryNameCatalog[randNum] + ", ");
-        y1.appendChild(y2);
-        y1.className = "country-name";
+        // checks if random number has already been used
+        // reiterate loop and output nothing if true
+        if(randNum == usedNum)
+        {
+            continue;
+        }
+        else
+        {
+            // create the String that holds a random country's name.
+            y1 = document.createElement("p1");
+            y2 = document.createTextNode(countryNameList[randNum] + ", ");
+            y1.appendChild(y2);
+            y1.className = "country-name";
 
-        // create the String that holds that country's code.
-        z1 = document.createElement("p2");
-        z2 = document.createTextNode(countryCodeCatalog[randNum]);
-        z1.appendChild(z2);
-        z1.className = "country-code";
+            // store that country in the list of used countries
+            usedCountries += countryNameList[randNum];
 
-        // create the list element that holds both Strings
-        listItem = document.createElement("li");
-        listItem.appendChild(y1);
-        listItem.appendChild(z1);
+            // create the String that holds that country's code.
+            z1 = document.createElement("p2");
+            z2 = document.createTextNode(countryCodeList[randNum]);
+            z1.appendChild(z2);
+            z1.className = "country-code";
 
-        // append the list item to the country list
-        countryListElement.appendChild(listItem);
+            // create the list element that holds both Strings
+            listItem = document.createElement("li");
+            listItem.appendChild(y1);
+            listItem.appendChild(z1);
+
+            // append the list item to the country list
+            countryListElement.appendChild(listItem);
+
+            // stores randomly generated number as a used number
+            usedNum = randNum;
+        }
     }
-}
 
-// (10) Log all unselected countries into the console.
+    // (10) Log all unselected countries into the console.
     // create a separate array to remove used countries from
     var unusedCountries = countryNameList;
 
@@ -137,4 +158,3 @@ countryButton.onclick = function getRandomCountries()
     // clears used countries list for next button press
     usedCountries = [];
 }
-
