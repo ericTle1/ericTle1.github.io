@@ -126,12 +126,15 @@ countryButton.onclick = function getRandomCountries()
     }
 }
 
+// (10) Log all unselected countries into the console.
+    // create a separate array to remove used countries from
+    var unusedCountries = countryNameList;
 
-// 10. Log all unselected countries into the console.
-for(x = 0; x < countryListElement.length; x++)
-{
-    if(countryCodeList[x] != countryListElement[x])
-    {
-        console.log(countryCodeList[x]);
-    }
+    // function returns a list of countries minus the 25 countries displayed 
+    unusedCountries = unusedCountries.filter(function(c) {return !usedCountries.includes(c)});
+    console.log(unusedCountries);
+
+    // clears used countries list for next button press
+    usedCountries = [];
 }
+
