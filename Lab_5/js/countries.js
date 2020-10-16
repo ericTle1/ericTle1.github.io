@@ -1,7 +1,7 @@
 // (2) Using JS, inject an ordered list into the div with the class "content"
 
 // holds country codes
-var countryCodeList = ["AF",	"AX",	"AL",	"DZ",	"AS",	
+var countryCodeCatalog = ["AF",	"AX",	"AL",	"DZ",	"AS",	
 "AD",	"AO",	"AI",	"AQ",	"AG",	"AR",	"AM",	"AW",	
 "AU",	"AT",	"AZ",	"BS",	"BH",	"BD",	"BB",	"BY",	
 "BE",	"BZ",	"BJ",	"BM",	"BT",	"BO",	"BQ",	"BA",	
@@ -35,7 +35,7 @@ var countryCodeList = ["AF",	"AX",	"AL",	"DZ",	"AS",
 "EH",	"YE",	"ZM",	"ZW"];
 
 // holds country names
-var countryNameList = ["Afghanistan",	"Ã…land Islands",	"Albania",	"Algeria",	"American Samoa",	
+var countryNameCatalog = ["Afghanistan",	"Ã…land Islands",	"Albania",	"Algeria",	"American Samoa",	
 "Andorra",	"Angola",	"Anguilla",	"Antarctica",	"Antigua and Barbuda",	"Argentina",	"Armenia",	
 "Aruba",	"Australia",	"Austria",	"Azerbaijan",	"Bahamas",	"Bahrain",	"Bangladesh",	"Barbados",	
 "Belarus",	"Belgium",	"Belize",	"Benin",	"Bermuda",	"Bhutan",	"Bolivia (Plurinational State of)",	
@@ -74,12 +74,12 @@ var countryNameList = ["Afghanistan",	"Ã…land Islands",	"Albania",	"Algeria",
 "Wallis and Futuna",	"Western Sahara",	"Yemen",	"Zambia",	"Zimbabwe"];
 
 // injects an ordered list into the html
-var countryList = [];
-var countryListContainer = document.createElement("div");
+var countryCatalog = [];
+var countryListContain = document.createElement("div");
 var countryListElement   = document.createElement("ol");
 
 // other necessary variables for the getRandomCountries function
-var countryListCount     = countryList.length;
+var countryCatalogCount = countryCatalog.length;
 var listItem;
 var randNum, usedNum = 9999999;
 var x, y1, y2, z1, z2;
@@ -103,13 +103,13 @@ const countryButton = document.querySelector("button");
 countryButton.addEventListener('click', getRandomCountries);
 function getRandomCountries()
 {
-    document.querySelector(".content").appendChild(countryListContainer);
-    countryListContainer.appendChild(countryListElement);
+    document.querySelector(".content").appendChild(countryListContain);
+    countryListContain.appendChild(countryListElement);
 
     for(x = 0; x < 25; x++)
     {
         // generates a random number
-        randNum = Math.floor(Math.random() * countryCodeList.length);
+        randNum = Math.floor(Math.random() * countryCodeCatalog.length);
 
         // checks if random number has already been used
         // reiterate loop and output nothing if true
@@ -121,16 +121,16 @@ function getRandomCountries()
         {
             // create the String that holds a random country's name.
             y1 = document.createElement("p1");
-            y2 = document.createTextNode(countryNameList[randNum] + ", ");
+            y2 = document.createTextNode(countryNameCatalog[randNum] + ", ");
             y1.appendChild(y2);
             y1.className = "country-name";
 
             // store that country in the list of used countries
-            usedCountries += countryNameList[randNum];
+            usedCountries += countryNameCatalog[randNum];
 
             // create the String that holds that country's code.
             z1 = document.createElement("p2");
-            z2 = document.createTextNode(countryCodeList[randNum]);
+            z2 = document.createTextNode(countryCodeCatalog[randNum]);
             z1.appendChild(z2);
             z1.className = "country-code";
 
@@ -149,7 +149,7 @@ function getRandomCountries()
 
     // (10) Log all unselected countries into the console.
     // create a separate array to remove used countries from
-    var unusedCountries = countryNameList;
+    var unusedCountries = countryNameCatalog;
 
     // function returns a list of countries minus the 25 countries displayed 
     unusedCountries = unusedCountries.filter(function(c) {return !usedCountries.includes(c)});
