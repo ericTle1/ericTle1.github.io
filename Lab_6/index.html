@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lab 6 - HTML Forms</title>
     <link rel="stylesheet" href="css/form_styles.css">
 </head>
 <body>
-    
+    <div class="header">HTML Forms Lab</div>
+    <div>
+        <form action="https://fierce-taiga-97625.herokuapp.com/lab" method="POST">
+            <ul>
+                <li>
+                    <label for="name">Name</label><br>
+                    <input type="text" id="name" name="name" maxlength="140">
+                </li>
+                <li>
+                    <label for="interests">Interests</label><br>
+                    <textarea id="interests" name="interests" rows="5" cols="33">Enter your interests here</textarea>
+                </li>
+                <li>
+                    <input type="submit" value="Submit">
+                </li>
+            </ul>
+        </form>
+    </div>
 </body>
 </html>

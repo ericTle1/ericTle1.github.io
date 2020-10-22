@@ -1,0 +1,45 @@
+.header {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+form {
+    margin: 0 auto;
+    width: 350px;
+    padding: 1em;
+  }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+label {
+    font-weight: bold;
+}
+
+form li + li {
+    margin-top: 1em;
+  }
+
+input, textarea {
+    font: 1em courier;
+    box-sizing: border-box;
+    border: 1px solid #999;
+  }
+
+input:focus, textarea:focus {
+    border-color: #000;
+  }
+
+textarea {
+    /* Align multiline text fields with their labels */
+    vertical-align: top;
+  
+    /* Provide space to type some text */
+    height: 5em;
+  }
