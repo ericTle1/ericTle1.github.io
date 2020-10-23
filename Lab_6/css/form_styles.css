@@ -4,7 +4,6 @@
     padding: 20px;
     font-size: xx-large;
     font-weight: bold;
-    background-color: bisque;
 }
 
 form {
@@ -46,4 +45,8 @@ textarea {
   }
   .button {
       background-color: #ff6600;
+      color: white;
+  }
+  input {
+    background-color: bisque;
   }
