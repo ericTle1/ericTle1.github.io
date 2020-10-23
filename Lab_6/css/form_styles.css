@@ -10,8 +10,7 @@ form {
     margin: 0 auto;
     width: 350px;
     padding: 1em;
-    background-color: bisque;
-  }
+}
 
 ul {
     list-style: none;
@@ -47,5 +46,8 @@ textarea {
   .button {
       background-color: #ff6600;
       color: white;
+  }
+  html {
+    background-color: bisque;
   }
   
