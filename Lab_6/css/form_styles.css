@@ -10,6 +10,7 @@ form {
     margin: 0 auto;
     width: 350px;
     padding: 1em;
+    background-color: bisque;
   }
 
 ul {
@@ -47,6 +48,4 @@ textarea {
       background-color: #ff6600;
       color: white;
   }
-  input {
-    background-color: bisque;
-  }
+  
