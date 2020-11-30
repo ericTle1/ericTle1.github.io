@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-let taskRoute = //TODO
+let taskRoute = require("./routes/task") //TODO
 let path = require('path')
 let bodyParser = require('body-parser')
 let db = require("./database.js")
@@ -15,4 +15,4 @@ app.use(taskRoute)
 app.use(express.static('public'))
 const PORT = process.env.PORT || 4000
 
-app.listen(PORT, () => console.info(`Server has started on ${PORT}`)) // Back ticks so I can add a variable
+app.listen(PORT, () => console.info(`Server has started on ${PORT}`))  // Back ticks so I can add a variable
